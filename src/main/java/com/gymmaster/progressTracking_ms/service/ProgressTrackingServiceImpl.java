@@ -23,28 +23,8 @@ public class ProgressTrackingServiceImpl implements IProgressTrackingService {
     @Override
     public SnapshotDTO createSnapshot(SnapshotDTO newSnapshot){
 
-        Snapshot snapshot = new Snapshot();
-
-        snapshot.setId(newSnapshot.getId());
-        snapshot.setUserId(newSnapshot.getUserId());
-        snapshot.setWeight(newSnapshot.getWeight());
-        snapshot.setHeight(newSnapshot.getHeight());
-        snapshot.setBodyFatPercentage(newSnapshot.getBodyFatPercentage());
-        snapshot.setNeck(newSnapshot.getNeck());
-        snapshot.setWaist(newSnapshot.getWaist());
-        snapshot.setHip(newSnapshot.getHip());
-        snapshot.setChest(newSnapshot.getChest());
-        snapshot.setLeftArm(newSnapshot.getLeftArm());
-        snapshot.setRightArm(newSnapshot.getRightArm());
-        snapshot.setLeftForearm(newSnapshot.getLeftForearm());
-        snapshot.setRightForearm(newSnapshot.getRightForearm());
-        snapshot.setLeftThigh(newSnapshot.getLeftThigh());
-        snapshot.setRightThigh(newSnapshot.getRightThigh());
-        snapshot.setLeftCalf(newSnapshot.getLeftCalf());
-        snapshot.setRightCalf(newSnapshot.getRightCalf());
-        snapshot.setDate(newSnapshot.getDate());
-
-        snapshot = snapshotRepository.save(snapshot);
+        Snapshot snapshot = SnapshotMapper.toEntity(newSnapshot);
+        snapshotRepository.save(snapshot);
         return SnapshotMapper.toDTO(snapshot);
     }
 
@@ -74,27 +54,10 @@ public class ProgressTrackingServiceImpl implements IProgressTrackingService {
     @Override
     public SnapshotDTO updateSnapshot(Long id, SnapshotDTO updatedSnapshot){
         Snapshot snapshot = snapshotRepository.findById(id).orElseThrow(() -> new NotFoundException("Snapshot not found with ID: " + id));
+        Snapshot snapshot_1 = SnapshotMapper.toEntity(updatedSnapshot);
+        snapshot_1.setId(snapshot.getId());
 
-        snapshot.setWeight(updatedSnapshot.getWeight());
-        snapshot.setHeight(updatedSnapshot.getHeight());
-        snapshot.setBodyFatPercentage(updatedSnapshot.getBodyFatPercentage());
-        snapshot.setNeck(updatedSnapshot.getNeck());
-        snapshot.setWaist(updatedSnapshot.getWaist());
-        snapshot.setHip(updatedSnapshot.getHip());
-        snapshot.setChest(updatedSnapshot.getChest());
-        snapshot.setLeftArm(updatedSnapshot.getLeftArm());
-        snapshot.setRightArm(updatedSnapshot.getRightArm());
-        snapshot.setLeftForearm(updatedSnapshot.getLeftForearm());
-        snapshot.setRightForearm(updatedSnapshot.getRightForearm());
-        snapshot.setLeftThigh(updatedSnapshot.getLeftThigh());
-        snapshot.setRightThigh(updatedSnapshot.getRightThigh());
-        snapshot.setLeftCalf(updatedSnapshot.getLeftCalf());
-        snapshot.setRightCalf(updatedSnapshot.getRightCalf());
-        snapshot.setDate(updatedSnapshot.getDate());
-
-        snapshot = snapshotRepository.save(snapshot);
-
-        return SnapshotMapper.toDTO(snapshot);
+        return SnapshotMapper.toDTO(snapshotRepository.save(snapshot_1));
 
     }
 
