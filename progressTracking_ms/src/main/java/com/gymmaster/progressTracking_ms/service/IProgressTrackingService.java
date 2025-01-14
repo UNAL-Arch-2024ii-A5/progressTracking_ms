@@ -1,9 +1,6 @@
 package com.gymmaster.progressTracking_ms.service;
 
-import com.gymmaster.progressTracking_ms.dot.response.ResponseDot;
-import com.gymmaster.progressTracking_ms.dot.response.SnapshotResponseUserDot;
-import com.gymmaster.progressTracking_ms.dot.response.SnapshotResponseAdminDot;
-import com.gymmaster.progressTracking_ms.dot.request.SnapshotRequestDot;
+import com.gymmaster.progressTracking_ms.dto.request.SnapshotDTO;
 
 import java.util.List;
 
@@ -11,18 +8,17 @@ import java.util.List;
 public interface IProgressTrackingService {
     // <<<< CRUD OP.
     //------CREATE-------//
-    public ResponseDot createSnapshot(SnapshotRequestDot newSnapshot);
+    public SnapshotDTO createSnapshot(SnapshotDTO newSnapshot);
 
     //------READ---------//
-    public SnapshotResponseUserDot getSnapshotByIdUser(Long Id);
-    public SnapshotResponseAdminDot getSnapshotByIdAdmin(Long Id);
-    public List<SnapshotResponseUserDot> getAllSnapshotsUser(Long userId);
-    public List<SnapshotResponseAdminDot> getAllSnapshotsAdmin();
+    public SnapshotDTO getSnapshotById(Long Id);
+    public List<SnapshotDTO> getAllSnapshotsUser(Long userId);
+    public List<SnapshotDTO> getAllSnapshots();
 
     //------UPDATE-------//
-    public ResponseDot updateSnapshot(Long id, SnapshotRequestDot updatedSnapshot);
+    public SnapshotDTO updateSnapshot(Long id, SnapshotDTO updatedSnapshot);
 
     //------DELETE-------//
-    public ResponseDot deleteSnapshot(Long id);
+    public void deleteSnapshot(Long id);
 
 }
