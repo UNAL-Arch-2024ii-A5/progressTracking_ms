@@ -1,17 +1,18 @@
-package com.gymmaster.progressTracking_ms.dot.response;
+package com.gymmaster.progressTracking_ms.dto.request;
 
 import java.time.LocalDate;
 
-import lombok.Data;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SnapshotResponseUserDot {
+public class SnapshotDTO {
 
+    private Long id;
+    private Long userId;
     private Double weight;
     private Double height;
     private Double bodyFatPercentage;
@@ -27,5 +28,5 @@ public class SnapshotResponseUserDot {
     private Double rightThigh;
     private Double leftCalf;
     private Double rightCalf;
-    private LocalDate date; // When were the measurements taken
+    private LocalDate date; // When the measurements where taken
 }

@@ -1,4 +1,4 @@
-package com.gymmaster.progressTracking_ms.dot.response;
+package com.gymmaster.progressTracking_ms.dto.response;
 
 import org.springframework.http.HttpStatusCode;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResponseDot {
+public class ResponseDTO {
     private String message;
     private HttpStatusCode statusCode;
 }
