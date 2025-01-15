@@ -21,7 +21,7 @@ docker run -p 8082:8080 --name progress_tracking_container --env-file .env progr
 
 - Java 21 or later installed on your system
 - MySQL database instance running locally or in the cloud
-- Maven or Gradle installed (Maven used in examples)
+- Maven installed
 
 ### Clone the Repository
 
