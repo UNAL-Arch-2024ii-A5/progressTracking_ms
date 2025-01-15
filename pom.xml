@@ -83,6 +83,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>progress_tracking_ms</finalName>
 	</build>
 
 </project>
