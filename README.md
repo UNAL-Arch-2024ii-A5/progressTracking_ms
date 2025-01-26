@@ -65,7 +65,7 @@ By default, the application will run on `http://localhost:8080`.
 
 ### Base URL
 
-`http://localhost:8080/api`
+`http://localhost:8082/api`
 
 ### Snapshot Routes
 
