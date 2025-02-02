@@ -57,7 +57,7 @@ Start the server:
 ./mvnw spring-boot:run
 ```
 
-By default, the application will run on `http://localhost:8080`.
+By default, the application will run on `http://localhost:8082`.
 
 ---
 
