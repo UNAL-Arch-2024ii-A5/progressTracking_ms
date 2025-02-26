@@ -1,6 +1,7 @@
 package com.gymmaster.progressTracking_ms.controller;
 
 import com.gymmaster.progressTracking_ms.dto.request.SnapshotDTO;
+import com.gymmaster.progressTracking_ms.dto.response.ResponseDTO;
 import com.gymmaster.progressTracking_ms.service.IProgressTrackingService;
 
 import org.springframework.http.HttpStatus;
@@ -55,8 +56,7 @@ public class progressTrackingController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSnapshot(@PathVariable Long id){
-        progressTrackingService.deleteSnapshot(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<ResponseDTO> deleteSnapshot(@PathVariable Long id){
+        return ResponseEntity.ok(progressTrackingService.deleteSnapshot(id));
     }
 }

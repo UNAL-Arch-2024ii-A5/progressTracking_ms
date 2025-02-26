@@ -1,6 +1,7 @@
 package com.gymmaster.progressTracking_ms.service;
 
 import com.gymmaster.progressTracking_ms.dto.request.SnapshotDTO;
+import com.gymmaster.progressTracking_ms.dto.response.ResponseDTO;
 
 import java.util.List;
 
@@ -19,6 +20,6 @@ public interface IProgressTrackingService {
     public SnapshotDTO updateSnapshot(Long id, SnapshotDTO updatedSnapshot);
 
     //------DELETE-------//
-    public void deleteSnapshot(Long id);
+    public ResponseDTO deleteSnapshot(Long id);
 
 }

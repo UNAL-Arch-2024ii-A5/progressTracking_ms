@@ -1,11 +1,13 @@
 package com.gymmaster.progressTracking_ms.service;
 
 import com.gymmaster.progressTracking_ms.dto.request.SnapshotDTO;
+import com.gymmaster.progressTracking_ms.dto.response.ResponseDTO;
 import com.gymmaster.progressTracking_ms.exception.NotFoundException;
 import com.gymmaster.progressTracking_ms.model.Snapshot;
 import com.gymmaster.progressTracking_ms.repository.SnapshotRepository;
 
 import com.gymmaster.progressTracking_ms.utils.SnapshotMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -63,10 +65,11 @@ public class ProgressTrackingServiceImpl implements IProgressTrackingService {
 
     //------------- DELETE -------------//
     @Override
-    public void deleteSnapshot(Long id) {
+    public ResponseDTO deleteSnapshot(Long id) {
         if (!snapshotRepository.existsById(id)) {
             throw new NotFoundException("Snapshot not found with ID: " + id);
         }
         snapshotRepository.deleteById(id);
+        return new ResponseDTO("Snapshot deleted successfully", HttpStatus.NO_CONTENT);
     }
 }
