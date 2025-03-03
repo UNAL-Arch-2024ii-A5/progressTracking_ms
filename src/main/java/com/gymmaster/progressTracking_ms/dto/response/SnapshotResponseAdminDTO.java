@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SnapshotResponseAdminDTO {
-    private Long userId;
+    private String userId;
     private Double weight;
     private Double height;
     private Double bodyFatPercentage;

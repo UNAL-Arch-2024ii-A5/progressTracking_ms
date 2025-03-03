@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class SnapshotDTO {
 
     private Long id;
-    private Long userId;
+    private String userId;
     private Double weight;
     private Double height;
     private Double bodyFatPercentage;

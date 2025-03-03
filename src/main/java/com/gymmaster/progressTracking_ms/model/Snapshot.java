@@ -19,7 +19,7 @@ public class Snapshot {
     private Long id;
 
     @Column(name = "user_id", nullable = false)
-    private Long userId;
+    private String userId;
     private Double weight;
     private Double height;
 

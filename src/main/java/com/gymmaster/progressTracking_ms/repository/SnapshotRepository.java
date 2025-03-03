@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface SnapshotRepository extends JpaRepository<Snapshot, Long> {
     // TODO Custom methods for filtering between dates, maybe done by the FE(?)
-    List<Snapshot> findByUserId(Long userId);
+    List<Snapshot> findByUserId(String userId);
 }

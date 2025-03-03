@@ -13,7 +13,7 @@ public interface IProgressTrackingService {
 
     //------READ---------//
     public SnapshotDTO getSnapshotById(Long Id);
-    public List<SnapshotDTO> getAllSnapshotsUser(Long userId);
+    public List<SnapshotDTO> getAllSnapshotsUser(String userId);
     public List<SnapshotDTO> getAllSnapshots();
 
     //------UPDATE-------//

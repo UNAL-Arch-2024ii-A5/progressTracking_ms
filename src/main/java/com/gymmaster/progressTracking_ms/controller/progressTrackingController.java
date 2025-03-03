@@ -38,7 +38,7 @@ public class progressTrackingController {
     }
 
     @GetMapping("/users/{userId}")
-    public ResponseEntity<List<SnapshotDTO>> getAllSnapshotsUser(@PathVariable Long userId){
+    public ResponseEntity<List<SnapshotDTO>> getAllSnapshotsUser(@PathVariable String userId){
         List<SnapshotDTO> snapshotDTOList = progressTrackingService.getAllSnapshotsUser(userId);
         return ResponseEntity.ok(snapshotDTOList);
     }

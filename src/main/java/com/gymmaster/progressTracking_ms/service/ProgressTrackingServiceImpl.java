@@ -39,7 +39,7 @@ public class ProgressTrackingServiceImpl implements IProgressTrackingService {
     }
 
     @Override
-    public List<SnapshotDTO> getAllSnapshotsUser(Long userId) {
+    public List<SnapshotDTO> getAllSnapshotsUser(String userId) {
         List<Snapshot> snapshots = snapshotRepository.findByUserId(userId);
 
         return snapshots.stream().map(SnapshotMapper::toDTO).collect(Collectors.toList());
